@@ -1,8 +1,24 @@
+html
+{
+    height: 100%;
+}
+
+body
+{
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    background-color: violet;
+}
+
 header
 {
     background-color: darkcyan;
-    min-height: 10em;
-    position: absolute; top: 0; left: 0; right: 0;
+    height: 10em;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
 }
 
 .logo_python
@@ -21,11 +37,15 @@ header
     color: white;
 }
 
+
 footer
 {
     background-color: darkcyan;
-    min-height: 10em;
-    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 10em;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
     text-align: center;
 }
 
@@ -45,4 +65,26 @@ footer
     font-size: 2em;
     font-weight: bold;
     color: white;
+}
+
+section
+{
+    background-color: yellow;
+    width: 100%;
+    top: 10em;
+    left: 0;
+    bottom: 10em;
+    position: fixed;
+    text-align: center;
+}
+
+.form_label
+{
+    font-size: 2em;
+}
+
+.form_input
+{
+    font-size: 2em;
+    width: 20em;
 }
