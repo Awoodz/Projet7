@@ -3,7 +3,6 @@ header
     background-color: darkcyan;
     min-height: 10em;
     position: absolute; top: 0; left: 0; right: 0;
-    vertical-align: baseline;
 }
 
 .logo_python
@@ -39,6 +38,11 @@ footer
 .url_github
 {
     font-size: 2em;
-    line-height: 4em;
 }
 
+.dev_name
+{
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+}
