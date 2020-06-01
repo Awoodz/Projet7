@@ -1,7 +1,5 @@
 env
-tutoflask
-tutohtml
-tutojs
-tutotest
+tutos
+grandpy/__pycache__
 .gitignore
 .vscode
