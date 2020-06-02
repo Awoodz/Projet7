@@ -37,6 +37,16 @@ header
     color: white;
 }
 
+.form_canva
+{
+    background-color: green;
+    top: 10em;
+    height: 7em;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+}
 
 footer
 {
@@ -67,17 +77,6 @@ footer
     color: white;
 }
 
-section
-{
-    background-color: yellow;
-    width: 100%;
-    top: 10em;
-    left: 0;
-    bottom: 10em;
-    position: fixed;
-    text-align: center;
-}
-
 .form_label
 {
     font-size: 2em;
@@ -88,3 +87,22 @@ section
     font-size: 2em;
     width: 20em;
 }
+
+.map_canva
+{
+    background-color: blue;
+    height: 22em;
+    width: 32em;
+    top: 17em;
+    right: 0em;
+    position: fixed;
+}
+#map
+{
+    height: 20em;
+    width: 30em;
+    top: 1em;
+    left: 1em;
+    position: fixed;
+}
+

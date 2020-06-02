@@ -14,7 +14,10 @@ def test_send_request():
 # Parse a request
 def test_parse_request():
     form_input = "Salut GrandPy ! Est-ce que tu connais l'adresse d'OpenClassrooms ?"
-    stopwords = hp.stop_words(get_stop_words(dt.BOT_LANGUAGE), dt.SPECIAL_STOP_WORDS)
+    stopwords = hp.stop_words(
+        get_stop_words(dt.BOT_LANGUAGE),
+        dt.SPECIAL_STOP_WORDS
+    )
     punctuation = hp.punctuation(string.punctuation)
     user = cg.Human(form_input)
     assert user.parse(stopwords, punctuation) == "adresse openclassrooms"
