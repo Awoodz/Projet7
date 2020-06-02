@@ -1,7 +1,7 @@
 class Bot():
     """Docstrings"""
 
-    def __init__(self):
+    def __init__(self, answer, tell_story):
         self.answer = answer
         self.tell_story = tell_story
 
@@ -9,7 +9,7 @@ class Bot():
 class Place():
     """Docstrings"""
 
-    def __init__(self):
+    def __init__(self, name, adress, longitude, latitude, story):
         self.name = name
         self.adress = adress
         self.longitude = longitude
