@@ -3,7 +3,7 @@ class Bot():
 
     def __init__(self):
         self.answer = answer
-        self.story = story
+        self.tell_story = tell_story
 
 
 class Place():
@@ -22,4 +22,5 @@ class Human():
 
     def __init__(self, form_input):
         self.request = form_input
-
+    
+    # def parse():
