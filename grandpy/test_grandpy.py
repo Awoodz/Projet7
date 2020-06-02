@@ -15,30 +15,30 @@ def test_parse_request():
 # Class Place
 # Get latitude
 def test_get_latitude():
-    site = cg.Place("name", "adress", 100, 50, "story")
+    site = cg.Place("name", "adress", 50, 100, "story")
     assert site.latitude == 100
 
 # Get longitude
 def test_get_longitude():
-    site = cg.Place("name", "adress", 100, 50, "story")
-    assert site.latitude == 50
+    site = cg.Place("name", "adress", 50, 100, "story")
+    assert site.longitude == 50
 # Get adress
 def test_get_adress():
-    site = cg.Place("name", "adress", 100, 50, "story")
+    site = cg.Place("name", "adress", 50, 100, "story")
     assert site.adress == "adress"
 # Get name
 def test_get_name():
-    site = cg.Place("name", "adress", 100, 50, "story")
-    assert site.adress == "name"
+    site = cg.Place("name", "adress", 50, 100, "story")
+    assert site.name == "name"
 # Get informations about a place
 def test_get_story():
-    site = cg.Place("name", "adress", 100, 50, "story")
-    assert site.adress == "story"
+    site = cg.Place("name", "adress", 50, 100, "story")
+    assert site.story == "story"
 
 # Bot
 # Give an answer for request
 def test_give_answer():
-    grandpy = cg.Bot("anwser", "story")
+    grandpy = cg.Bot("answer", "story")
     assert grandpy.answer == "answer"
 # Tell a story
 def test_tell_story():
