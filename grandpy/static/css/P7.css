@@ -118,7 +118,7 @@ footer
     font-size: 3em;
 }
 
-#form_label
+#submit_button
 {
     font-size: 2em;
 }
@@ -126,7 +126,7 @@ footer
 #form_input
 {
     font-size: 2em;
-    width: 33%;
+    width: 50%;
 }
 
 #map

@@ -15,9 +15,11 @@
             <div id="main">
 
                 <div id="userform">
-                    <form method="POST">
-                            <label id="form_label">Posez votre question à GrandPy ! </label></br>
-                            <input name="form_input" id="form_input"/>
+                    <form id="grandpy_form" method="POST">
+                            <label for="form_input" id="form_label"></label>
+                            <input type="text" name="form_input" id="form_input" placeholder="Posez votre question à GrandPy !"/>
+                            <input id="submit_button" type="submit" value="Envoyer"/>
+                            
                 </div>
 
                 <div id="grandpy">
@@ -50,5 +52,7 @@
                 <a href="https://github.com/Awoodz/Projet7" id="url_github">https://github.com/Awoodz/Projet7</a>
             </footer>
         </div>
+
+        <script src="static/js/userform.js"></script>
     </body>
 </html>
