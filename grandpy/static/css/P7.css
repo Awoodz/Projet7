@@ -1,108 +1,135 @@
-html
-{
-    height: 100%;
-}
-
 body
 {
-    height: 100%;
-    min-height: 100%;
-    position: relative;
-    background-color: violet;
-}
-
-header
-{
-    background-color: darkcyan;
-    height: 10em;
     width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
+    margin: 0;
+    padding: 0;
 }
 
-.logo_python
+#global
 {
-    width: 8em;
-    height: 8em;
-    float: left;
-    position: relative; left: 1em;
+    width :100% ;
+    margin :auto ;
+    padding :0px ;
+    background-color: pink;
 }
 
-.catchphrase
+header, footer
 {
+    background-color: teal;
+    width: 100%;
     text-align: center;
+    position: fixed;
+    height: 10em;
+}
+
+#main
+{
+    padding-top: 10em;
+}
+
+
+#userform
+{
+    float: right;
+    background-color: green;
+    width: 100%;
+    text-align: center;
+}
+
+#grandpy
+{
+    background-color: yellow;
+}
+
+#answer
+{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#story
+{
+    background-color: cyan;
+    font-size: 2em;
+}
+
+#map_area
+{
+    background-color: blue;
+}
+
+footer
+{
+    float: right;
+    position: fixed;
+    bottom: 0;
+}
+
+@media(max-width: 767px)
+{
+    #grandpy
+    {
+        width: 100%;
+    }
+
+    #map_area
+    {
+        width: 100%;
+    }
+}
+
+@media(min-width: 1388px)
+{
+    #grandpy
+    {
+        width: 50%;
+        float: left;
+    }
+
+    #map_area
+    {
+        width: 50%;
+        float: left;
+    }
+}
+
+#catchphrase, #dev_name
+{
     font-size: 3em;
     font-weight: bold;
     color: white;
 }
 
-.form_canva
+#logo_python
 {
-    background-color: green;
-    top: 10em;
-    height: 7em;
-    left: 0;
-    width: 100%;
-    position: fixed;
-    text-align: center;
+    width: 8em;
+    height: 8em;
+    float: left;
 }
 
-footer
-{
-    background-color: darkcyan;
-    height: 10em;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    text-align: center;
-}
-
-.logo_github
+#logo_github
 {
     width: 2em;
     height: 2em;
 }
 
-.url_github
+#url_github
+{
+    font-size: 3em;
+}
+
+#form_label
 {
     font-size: 2em;
 }
 
-.dev_name
+#form_input
 {
     font-size: 2em;
-    font-weight: bold;
-    color: white;
+    width: 33%;
 }
 
-.form_label
-{
-    font-size: 2em;
-}
-
-.form_input
-{
-    font-size: 2em;
-    width: 20em;
-}
-
-.map_canva
-{
-    background-color: blue;
-    height: 22em;
-    width: 32em;
-    top: 17em;
-    right: 0em;
-    position: fixed;
-}
 #map
 {
-    height: 20em;
-    width: 30em;
-    top: 1em;
-    left: 1em;
-    position: fixed;
+    height: 50%;
 }
-

@@ -13,6 +13,6 @@ def get_form_input():
     user_input = request.form['form_input']
     print(user_input)
     return render_template('P7.html')
-    
+
 
 app.config.from_object('config')
