@@ -8,7 +8,7 @@ app.config.from_object('config')
 
 @app.route("/")
 def index():
-    return render_template('P7.html')
+    return render_template('index.html')
 
 @app.route("/userinput", methods=["POST"])
 def userinput():

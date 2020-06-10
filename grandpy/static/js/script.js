@@ -28,8 +28,11 @@ form.addEventListener("submit", function (event) {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: latitude, lng: longitude},
             zoom: 18
-            });
-        marker = new google.maps.Marker({position: {lat: latitude, lng: longitude}, map: map});
+        });
+        marker = new google.maps.Marker({
+            position: {lat: latitude, lng: longitude},
+            map: map
+        });
     })
 })
 
