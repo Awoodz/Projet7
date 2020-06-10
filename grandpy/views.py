@@ -13,6 +13,5 @@ def index():
 @app.route("/userinput", methods=["POST"])
 def userinput():
     user_input = request.form["form_input"]
-    response = gp.traitement(user_input)
-    print(jsonify(response))
+    response = gp.get_request(user_input)
     return jsonify(response)

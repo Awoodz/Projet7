@@ -1,7 +1,7 @@
 let form = document.querySelector("#grandpy_form");
 
 function postFormData(url, data) {
-    fetch(url, {
+    return fetch(url, {
         method: "POST",
         body: data
     })
@@ -16,6 +16,9 @@ form.addEventListener("submit", function (event) {
     postFormData("/userinput", new FormData(form))
     .then(response => {
         console.log(response);
+        var answerDiv = document.getElementById('answer');
+        answerDiv.innerHTML = response.adress;
+        var storyDiv = document.getElementById('story');
+        storyDiv.innerHTML = response.story;
     })
 })
-
