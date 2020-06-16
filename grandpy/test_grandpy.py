@@ -59,3 +59,11 @@ def test_google_map_request(monkeypatch):
         return response
 
     assert app.get_request("Openclassrooms") == response
+
+def test_wiki_request(monkeypatch):
+    response = "OpenClassrooms est un site web de formation en ligne qui propose à ses membres des cours certifiants et des parcours débouchant sur des métiers en croissance."
+
+    def mockreturn(request):
+        return response
+
+    assert app.get_request("Openclassrooms")["story"] == response
