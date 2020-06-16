@@ -1,7 +1,8 @@
 from stop_words import get_stop_words
 import string
 
-import grandpy.class_grandpy as cg
+import grandpy.class_file.human as hu
+import grandpy.class_file.place as pl
 import grandpy.data as dt
 import grandpy.helpers as hp
 import config as config
@@ -17,7 +18,7 @@ def get_request(user_input):
     )
     punctuation = hp.punctuation(string.punctuation)
 
-    user = cg.Human(user_input)
+    user = hu.Human(user_input)
 
     parser = user.parse(stopwords, punctuation)
 
@@ -27,7 +28,7 @@ def get_request(user_input):
         for dictionary in result_json["candidates"]:
             place_data.append(dictionary)
 
-        place = cg.Place(place_data[0], "bonjour")
+        place = pl.Place(place_data[0], "bonjour")
 
         return {
             "name": place.name,
