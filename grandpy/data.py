@@ -1,4 +1,5 @@
 BOT_LANGUAGE = "french"
+WIKI_LANGUAGE = "fr"
 SPECIAL_STOP_WORDS = ["grandpy"]
 
 API_MAP_NAME = "name"

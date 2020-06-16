@@ -24,11 +24,12 @@ def get_request(user_input):
 
     try:
         result_json = hp.gmap_request(parser, config.GMAP_API_KEY)
+        place_story = hp.wiki_request(parser, dt.WIKI_LANGUAGE)
 
         for dictionary in result_json["candidates"]:
             place_data.append(dictionary)
 
-        place = pl.Place(place_data[0], "bonjour")
+        place = pl.Place(place_data[0], place_story)
 
         return {
             "name": place.name,

@@ -1,6 +1,7 @@
 import json
 import requests
 import grandpy.data as dt
+import wikipedia
 
 def stop_words(stopwords, extra_stopwords):
     """Docstrings"""
@@ -26,3 +27,9 @@ def gmap_request(parsed_txt, gmap_api_key):
         inputtype +
         api_key)
     return gmap_req.json()
+
+def wiki_request(name, language):
+    """Docstrings"""
+    wikipedia.set_lang(language)
+    story = wikipedia.summary(name, sentences=1)
+    return story
