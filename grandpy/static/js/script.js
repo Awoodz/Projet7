@@ -2,7 +2,6 @@ let form = document.querySelector("#grandpy_form");
 var map;
 var marker;
 
-
 function postFormData(url, data) {
     return fetch(url, {
         method: "POST",

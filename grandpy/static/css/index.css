@@ -10,7 +10,6 @@ body
     width :100% ;
     margin :auto ;
     padding :0px ;
-    background-color: pink;
 }
 
 header, footer
@@ -31,15 +30,10 @@ header, footer
 #userform
 {
     float: right;
-    background-color: green;
     width: 100%;
     text-align: center;
 }
 
-#grandpy
-{
-    background-color: yellow;
-}
 
 #answer
 {
@@ -49,13 +43,7 @@ header, footer
 
 #story
 {
-    background-color: cyan;
     font-size: 2em;
-}
-
-#map_area
-{
-    background-color: blue;
 }
 
 footer
@@ -133,3 +121,21 @@ footer
 {
     height: 50%;
 }
+
+.loader {
+    border: 2em solid #f3f3f3; /* Light grey */
+    border-top: 2em solid #3498db; /* Blue */
+    border-bottom: 2em solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 6em;
+    height: 6em;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 44%;
+    left: 44%;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
