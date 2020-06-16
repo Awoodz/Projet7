@@ -5,3 +5,5 @@ grandpy/__pycache__
 .vscode
 essai.py
 __pycache__
+grandpy/static/js/config.js
+config.py

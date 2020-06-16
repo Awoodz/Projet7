@@ -33,6 +33,6 @@ form.addEventListener("submit", function (event) {
             position: {lat: latitude, lng: longitude},
             map: map
         });
+        
     })
-})
-
+});
