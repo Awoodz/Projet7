@@ -15,41 +15,26 @@ def get_request(user_input):
     )
     punctuation = hp.punctuation(string.punctuation)
 
-    # try:
+    try:
 
-    #     grandpy = gp.Grandpy(
-    #         dt.WIKI_LANGUAGE,
-    #         cg.GMAP_API_KEY,
-    #         user_input,
-    #         stopwords,
-    #         punctuation
-    #     )
+        grandpy = gp.Grandpy(
+            dt.WIKI_LANGUAGE,
+            cg.GMAP_API_KEY,
+            user_input,
+            stopwords,
+            punctuation
+        )
 
-    #     return {
-    #         "name": grandpy.name,
-    #         "adress": grandpy.adress,
-    #         "lat": grandpy.lat,
-    #         "lng": grandpy.lng,
-    #         "story": grandpy.story
-    #     }
-    # except:
-    #     return {
-    #         "adress": "Mais qu'est ce que tu raconte ?",
-    #         "story": "Tu te drogues, petit ?"
-    #     }
-
-    grandpy = gp.Grandpy(
-        dt.WIKI_LANGUAGE,
-        cg.GMAP_API_KEY,
-        user_input,
-        stopwords,
-        punctuation
-    )
-
-    return {
-        "name": grandpy.name,
-        "adress": grandpy.adress,
-        "lat": grandpy.lat,
-        "lng": grandpy.lng,
-        "story": grandpy.story
-    }
+        return {
+            "name": grandpy.name,
+            "adress": hp.randomisator(dt.GRANDPY_PLACE) + grandpy.adress,
+            "lat": grandpy.lat,
+            "lng": grandpy.lng,
+            "story": hp.randomisator(dt.GRANDPY_STORY) + grandpy.story
+        }
+    except IndexError as error:
+        print(error)
+        return {
+            "adress": hp.randomisator(dt.GRANDPY_PLACE_ERROR),
+            "story": hp.randomisator(dt.GRANDPY_STORY_ERROR)
+        }

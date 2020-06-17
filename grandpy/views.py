@@ -6,9 +6,11 @@ app_flask = Flask(__name__)
 
 app_flask.config.from_object('config')
 
+
 @app_flask.route("/")
 def index():
     return render_template('index.html')
+
 
 @app_flask.route("/userinput", methods=["POST"])
 def userinput():
