@@ -5,7 +5,7 @@ import grandpy.class_file.story as st
 
 
 class Grandpy():
-    """Docstrings"""
+    """Gather all datas that will be returned to frontpage"""
 
     def __init__(
         self,
