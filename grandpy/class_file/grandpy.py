@@ -1,7 +1,7 @@
-import parser as prs
-import requester as rq
-import place as pl
-import story as st
+import grandpy.class_file.parser as prs
+import grandpy.class_file.requester as rq
+import grandpy.class_file.place as pl
+import grandpy.class_file.story as st
 
 
 class Grandpy():

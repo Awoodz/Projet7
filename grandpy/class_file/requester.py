@@ -1,13 +1,13 @@
 import requests
 
-import data as dt
+import grandpy.data as dt
 
 
 class Requester():
     """Docstrings"""
 
     def __init__(self, parsed_txt, gmap_api_key):
-        self.placedata = self.gmap_request(parsed_txt, cg.GMAP_API_KEY)
+        self.placedata = self.gmap_request(parsed_txt, gmap_api_key)
 
     def gmap_request(self, parsed_txt, gmap_api_key):
         """Docstrings"""

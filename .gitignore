@@ -4,6 +4,7 @@ grandpy/__pycache__
 .gitignore
 .vscode
 essai.py
+essai2.py
 __pycache__
 grandpy/static/js/config.js
 grandpy/class/__pycache__

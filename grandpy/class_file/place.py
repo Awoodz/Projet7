@@ -1,4 +1,4 @@
-import data as dt
+import grandpy.data as dt
 
 
 class Place():

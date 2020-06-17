@@ -1,5 +1,5 @@
 import wikipedia
-import place as pl
+import grandpy.class_file.place as pl
 
 
 class Story():
