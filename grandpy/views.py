@@ -16,5 +16,4 @@ def index():
 def userinput():
     user_input = request.form["form_input"]
     response = app.get_request(user_input)
-    print(response)
     return jsonify(response)

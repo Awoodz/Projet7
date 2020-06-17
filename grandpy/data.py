@@ -3,6 +3,7 @@ WIKI_LANGUAGE = "fr"
 SPECIAL_STOP_WORDS = ["grandpy"]
 
 API_MAP_CANDIDATES = "candidates"
+API_MAP_STATUS = "status"
 API_MAP_NAME = "name"
 API_MAP_ADRESS = "formatted_address"
 API_MAP_GEO = "geometry"

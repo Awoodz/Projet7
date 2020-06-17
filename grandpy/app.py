@@ -32,7 +32,7 @@ def get_request(user_input):
             "lng": grandpy.lng,
             "story": hp.randomisator(dt.GRANDPY_STORY) + grandpy.story
         }
-    except IndexError as error:
+    except (IndexError, TypeError) as error:
         print(error)
         return {
             "adress": hp.randomisator(dt.GRANDPY_PLACE_ERROR),
