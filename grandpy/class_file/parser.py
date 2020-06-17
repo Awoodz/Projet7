@@ -1,13 +1,13 @@
-class Human():
+class Parser():
     """Docstrings"""
 
-    def __init__(self, form_input):
-        self.request = form_input
-    
-    def parse(self, stop_words, punctuation):
+    def __init__(self, form_input, stop_words, punctuation):
+        self.request = self.parse(form_input, stop_words, punctuation)
 
-        request = self.request.lower()
-        
+    def parse(self, form_input, stop_words, punctuation):
+
+        request = form_input.lower()
+
         for elem in punctuation:
             request = request.replace(elem, " ")
 

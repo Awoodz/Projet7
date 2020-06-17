@@ -1,16 +1,13 @@
 from stop_words import get_stop_words
 import string
 
-import grandpy.class_file.human as hu
-import grandpy.class_file.place as pl
+import grandpy.class_file.grandpy as gp
 import grandpy.data as dt
 import grandpy.helpers as hp
-import config as config
+import config as cg
 
 
 def get_request(user_input):
-
-    place_data = []
 
     stopwords = hp.stop_words(
         get_stop_words(dt.BOT_LANGUAGE),
@@ -18,28 +15,41 @@ def get_request(user_input):
     )
     punctuation = hp.punctuation(string.punctuation)
 
-    user = hu.Human(user_input)
+    # try:
 
-    parser = user.parse(stopwords, punctuation)
+    #     grandpy = gp.Grandpy(
+    #         dt.WIKI_LANGUAGE,
+    #         cg.GMAP_API_KEY,
+    #         user_input,
+    #         stopwords,
+    #         punctuation
+    #     )
 
-    try:
-        result_json = hp.gmap_request(parser, config.GMAP_API_KEY)
-        place_story = hp.wiki_request(parser, dt.WIKI_LANGUAGE)
+    #     return {
+    #         "name": grandpy.name,
+    #         "adress": grandpy.adress,
+    #         "lat": grandpy.lat,
+    #         "lng": grandpy.lng,
+    #         "story": grandpy.story
+    #     }
+    # except:
+    #     return {
+    #         "adress": "Mais qu'est ce que tu raconte ?",
+    #         "story": "Tu te drogues, petit ?"
+    #     }
 
-        for dictionary in result_json["candidates"]:
-            place_data.append(dictionary)
+    grandpy = gp.Grandpy(
+        dt.WIKI_LANGUAGE,
+        cg.GMAP_API_KEY,
+        user_input,
+        stopwords,
+        punctuation
+    )
 
-        place = pl.Place(place_data[0], place_story)
-
-        return {
-            "name": place.name,
-            "adress": place.adress,
-            "lat": place.latitude,
-            "lng": place.longitude,
-            "story": place.story
-        }
-    except:
-        return {
-            "adress": "Mais qu'est ce que tu raconte ?",
-            "story": "Tu te drogues, petit ?"
-        }
+    return {
+        "name": grandpy.name,
+        "adress": grandpy.adress,
+        "lat": grandpy.lat,
+        "lng": grandpy.lng,
+        "story": grandpy.story
+    }

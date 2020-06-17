@@ -93,6 +93,9 @@ footer
     width: 8em;
     height: 8em;
     float: left;
+    position: relative;
+    top: 1em;
+    left: 1em;
 }
 
 #logo_github

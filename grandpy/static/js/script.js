@@ -37,8 +37,10 @@ form.addEventListener("submit", function (event) {
             position: {lat: latitude, lng: longitude},
             map: map
         });
+        
         document.querySelector("#loader").style.visibility = "hidden";
         document.querySelector("#grandpy").style.visibility = "visible";
         document.querySelector("#map").style.visibility = "visible";
+        document.getElementById("grandpy_form").reset();
     })
 });
