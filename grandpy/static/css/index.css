@@ -122,10 +122,10 @@ footer
     height: 50%;
 }
 
-.loader {
-    border: 2em solid #f3f3f3; /* Light grey */
-    border-top: 2em solid #3498db; /* Blue */
-    border-bottom: 2em solid #3498db; /* Blue */
+#loader {
+    border: 2em solid ghostwhite;
+    border-top: 2em solid teal;
+    border-bottom: 2em solid teal;
     border-radius: 50%;
     width: 6em;
     height: 6em;
