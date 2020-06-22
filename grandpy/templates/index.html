@@ -3,9 +3,10 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="static/css/index.css" />
         <title>GrandPyBot</title>
+        <link rel="icon" type="image/png" href="static/img/favicon.png"/>
     </head>
-
     <body>
+        <div id="loader"></div>
         <div id="global">
             <header>
                 <img src="static/img/logo_python.png" alt="logo python png" id="logo_python" /> 
@@ -21,6 +22,7 @@
                             <input id="submit_button" type="submit" value="Envoyer"/>
                             
                 </div>
+                
 
                 <div id="grandpy">
                     <div id="answer"></div>
@@ -40,9 +42,10 @@
             </footer>
         </div>
 
-        <script src="static/js/script.js"></script>
+        <script type="text/javascript" src="static/js/script.js"></script>
         <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtqp7WWuiQMyG-Z0HvGs-8qfdXsC6otx8&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key={{gmap_api_key}}&callback=initMap")>
         </script>
+
     </body>
 </html>

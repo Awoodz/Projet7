@@ -1,17 +1,21 @@
 from flask import Flask, render_template, request, jsonify
-import grandpy.grandpy as gp
+import grandpy.app as app
+import config as cg
 
 
-app = Flask(__name__)
+app_flask = Flask(__name__)
 
-app.config.from_object('config')
+app_flask.config.from_object('config')
 
-@app.route("/")
+
+@app_flask.route("/")
 def index():
-    return render_template('index.html')
+    gmap_api_key = cg.GMAP_API_KEY
+    return render_template('index.html', gmap_api_key = gmap_api_key )
 
-@app.route("/userinput", methods=["POST"])
+
+@app_flask.route("/userinput", methods=["POST"])
 def userinput():
     user_input = request.form["form_input"]
-    response = gp.get_request(user_input)
+    response = app.get_request(user_input)
     return jsonify(response)

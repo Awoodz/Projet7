@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-from grandpy import app
+from grandpy import app_flask
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app_flask.run(debug=True)
