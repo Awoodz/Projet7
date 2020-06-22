@@ -1,10 +1,10 @@
 from stop_words import get_stop_words
 import string
 
-import grandpy.class_file.grandpy as gp
+from grandpy.class_file.grandpy import Grandpy
 import grandpy.data as dt
 import grandpy.helpers as hp
-import config as cg
+from config import GMAP_API_KEY
 
 
 def get_request(user_input):
@@ -20,9 +20,9 @@ def get_request(user_input):
 
     try:
         # Initialize Grandpy class
-        grandpy = gp.Grandpy(
+        grandpy = Grandpy(
             dt.WIKI_LANGUAGE,
-            cg.GMAP_API_KEY,
+            GMAP_API_KEY,
             user_input,
             stopwords,
             punctuation

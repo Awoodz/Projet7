@@ -19,6 +19,7 @@ header, footer
     text-align: center;
     position: fixed;
     height: 10em;
+    vertical-align: middle;
 }
 
 #main
@@ -88,11 +89,15 @@ footer
     color: white;
 }
 
+#div_logo
+{
+    float: left;
+}
+
 #logo_python
 {
     width: 8em;
     height: 8em;
-    float: left;
     position: relative;
     top: 1em;
     left: 1em;

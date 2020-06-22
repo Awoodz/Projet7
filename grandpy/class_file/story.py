@@ -1,5 +1,5 @@
 import wikipedia
-import grandpy.class_file.place as pl
+from grandpy.class_file.place import Place
 import grandpy.data as dt
 
 
@@ -7,7 +7,7 @@ class Story():
     """Gather story data"""
 
     def __init__(self, gmap_json, language):
-        self.place = pl.Place(gmap_json)
+        self.place = Place(gmap_json)
         name = self.place.name
         self.story = self.wiki_request(name, language)
 

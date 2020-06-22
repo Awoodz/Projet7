@@ -14,7 +14,7 @@ def index():
     return render_template('index.html', gmap_api_key = gmap_api_key )
 
 
-@app_flask.route("/userinput", methods=["POST"])
+@app_flask.route("/API/request", methods=["POST"])
 def userinput():
     user_input = request.form["form_input"]
     response = app.get_request(user_input)
