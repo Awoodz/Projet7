@@ -6,7 +6,7 @@ import grandpy.helpers as hp
 from grandpy.class_file.parser import Parser
 
 
-def test_do_parser_remove_stop_words():
+def test_does_parser_remove_stop_words():
     text_to_parse = (
         "Salut GrandPy ! Est-ce que tu connais l'adresse d'OpenClassrooms ?"
     )
