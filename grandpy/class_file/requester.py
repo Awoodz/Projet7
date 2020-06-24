@@ -23,7 +23,7 @@ class Requester():
             inputtype +
             api_key
         )
-        return gmap_req
+        return gmap_req.json()
 
     def words_removal(request_txt):
         """Removes words from a string"""
@@ -55,10 +55,13 @@ class Requester():
         # As long as checker is not True
         while not checker:
 
-            gmap_req = Requester.google_map_request(request_txt, gmap_api_key)
+            req_response = Requester.google_map_request(
+                request_txt,
+                gmap_api_key
+            )
 
             # If the request status is invalid
-            if gmap_req.json()[dt.API_MAP_STATUS] == "INVALID_REQUEST":
+            if req_response[dt.API_MAP_STATUS] == "INVALID_REQUEST":
                 # stop the loop
                 checker = True
                 # return an empty google map json
@@ -66,7 +69,7 @@ class Requester():
                 return {dt.API_MAP_CANDIDATES: 0}
 
             # And if request status is not OK
-            elif gmap_req.json()[dt.API_MAP_STATUS] != "OK":
+            elif req_response[dt.API_MAP_STATUS] != "OK":
                 request_txt = Requester.words_removal(request_txt)
 
             # Else, if everything is ok
@@ -74,4 +77,4 @@ class Requester():
                 # stop the loop
                 checker = True
                 # return the result as a json
-                return gmap_req.json()
+                return req_response

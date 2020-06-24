@@ -120,4 +120,3 @@ def test_does_place_class_can_return_longitude(monkeypatch):
     fake_json = {}
     fake_place = Place(fake_json)
     assert fake_place.lng == 100
-
