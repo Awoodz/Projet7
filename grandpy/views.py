@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+
 import grandpy.app as app
 import config as cg
 

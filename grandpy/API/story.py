@@ -1,6 +1,7 @@
 import wikipedia
-from grandpy.class_file.place import Place
-import grandpy.data as dt
+
+from grandpy.API.place import Place
+import grandpy.utilities.data as dt
 
 
 class Story():

@@ -1,4 +1,4 @@
-from grandpy.class_file.requester import Requester
+from grandpy.API.requester import Requester
 
 
 def test_does_words_removal_remove_first_words_of_string():

@@ -1,7 +1,7 @@
-from grandpy.class_file.parser import Parser
-from grandpy.class_file.requester import Requester
-from grandpy.class_file.place import Place
-from grandpy.class_file.story import Story
+from grandpy.utilities.parser import Parser
+from grandpy.API.requester import Requester
+from grandpy.API.place import Place
+from grandpy.API.story import Story
 
 
 class Grandpy():
@@ -15,12 +15,19 @@ class Grandpy():
         stop_words,
         punctuation
     ):
-        self.parsed_request = Parser(form_input, stop_words, punctuation)
-        parsed_txt = self.parsed_request.request
-        self.apigmap = Requester(parsed_txt, gmap_api_key)
-        gmap_json = self.apigmap.placedata
-        self.place_data = Place(gmap_json)
-        self.story_data = Story(gmap_json, language)
+        self.parsed_request = Parser(
+            form_input,
+            stop_words,
+            punctuation
+        ).request
+
+        self.apigmap = Requester(
+            self.parsed_request,
+            gmap_api_key
+        ).placedata
+        
+        self.place_data = Place(self.apigmap)
+        self.story_data = Story(self.apigmap, language)
 
     @property
     def name(self):

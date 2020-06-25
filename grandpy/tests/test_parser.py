@@ -1,4 +1,4 @@
-from grandpy.class_file.parser import Parser
+from grandpy.utilities.parser import Parser
 
 
 def mock_stopwords():

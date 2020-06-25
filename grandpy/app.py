@@ -1,9 +1,9 @@
 from stop_words import get_stop_words
 import string
 
-from grandpy.class_file.grandpy import Grandpy
-import grandpy.data as dt
-import grandpy.helpers as hp
+from grandpy.utilities.grandpy import Grandpy
+import grandpy.utilities.data as dt
+import grandpy.utilities.helpers as hp
 from config import GMAP_API_KEY
 
 

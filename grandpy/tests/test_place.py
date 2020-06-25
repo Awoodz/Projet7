@@ -1,4 +1,4 @@
-from grandpy.class_file.place import Place
+from grandpy.API.place import Place
 
 
 def test_does_datas_get_out_from_json_list(monkeypatch):
