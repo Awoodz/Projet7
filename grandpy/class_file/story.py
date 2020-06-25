@@ -7,9 +7,8 @@ class Story():
     """Gather story data"""
 
     def __init__(self, gmap_json, language):
-        self.place = Place(gmap_json)
-        name = self.place.name
-        self.story = self.wiki_request(name, language)
+        self.place = Place(gmap_json).name
+        self.story = self.wiki_request(self.place, language)
 
     def wiki_request(self, name, language):
         """Get a short story using wikipedia module"""
