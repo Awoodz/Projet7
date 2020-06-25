@@ -9,4 +9,3 @@ __pycache__
 grandpy/tests/__pycache__
 grandpy/API/__pycache__
 grandpy/utilities/__pycache__
-config.py
