@@ -20,11 +20,11 @@ def test_request_engine_return_mock_response_if_google_status_is_invalid(
         mock_invalid_google_request
     )
     monkeypatch.setattr(
-        "grandpy.data.API_MAP_STATUS",
+        "grandpy.utilities.data.API_MAP_STATUS",
         "test_status"
     )
     monkeypatch.setattr(
-        "grandpy.data.API_MAP_CANDIDATES",
+        "grandpy.utilities.data.API_MAP_CANDIDATES",
         "test_candidates"
     )
     assert Requester.request_engine("self", "fake_txt", "fake_api_key") == {
@@ -45,7 +45,7 @@ def test_request_engine_return_mock_response_if_google_status_is_valid(
         mock_valid_google_request
     )
     monkeypatch.setattr(
-        "grandpy.data.API_MAP_STATUS",
+        "grandpy.utilities.data.API_MAP_STATUS",
         "test_status"
     )
     assert Requester.request_engine("self", "fake_txt", "fake_api_key") == {

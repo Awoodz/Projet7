@@ -3,7 +3,7 @@ from grandpy.API.place import Place
 
 def test_does_datas_get_out_from_json_list(monkeypatch):
     monkeypatch.setattr(
-        "grandpy.data.API_MAP_CANDIDATES",
+        "grandpy.utilities.data.API_MAP_CANDIDATES",
         "candidates_test"
     )
     fake_json = {
@@ -41,7 +41,7 @@ def mock_get_name(self):
 def test_does_place_class_can_return_name(monkeypatch):
     monkeypatch.setattr(Place, "get_place_data", mock_get_name)
     monkeypatch.setattr(
-        "grandpy.data.API_MAP_NAME",
+        "grandpy.utilities.data.API_MAP_NAME",
         "name_test"
     )
     fake_json = {}
@@ -56,7 +56,7 @@ def mock_get_address(self):
 def test_does_place_class_can_return_address(monkeypatch):
     monkeypatch.setattr(Place, "get_place_data", mock_get_address)
     monkeypatch.setattr(
-        "grandpy.data.API_MAP_ADRESS",
+        "grandpy.utilities.data.API_MAP_ADRESS",
         "test_address"
     )
     fake_json = {}
@@ -77,15 +77,15 @@ def mock_get_lat(self):
 def test_does_place_class_can_return_latitude(monkeypatch):
     monkeypatch.setattr(Place, "get_place_data", mock_get_lat)
     monkeypatch.setattr(
-        "grandpy.data.API_MAP_GEO",
+        "grandpy.utilities.data.API_MAP_GEO",
         "test_geometry"
     )
     monkeypatch.setattr(
-        "grandpy.data.API_MAP_LOC",
+        "grandpy.utilities.data.API_MAP_LOC",
         "test_location"
     )
     monkeypatch.setattr(
-        "grandpy.data.API_MAP_LAT",
+        "grandpy.utilities.data.API_MAP_LAT",
         "test_lat"
     )
     fake_json = {}
@@ -106,15 +106,15 @@ def mock_get_lng(self):
 def test_does_place_class_can_return_longitude(monkeypatch):
     monkeypatch.setattr(Place, "get_place_data", mock_get_lng)
     monkeypatch.setattr(
-        "grandpy.data.API_MAP_GEO",
+        "grandpy.utilities.data.API_MAP_GEO",
         "test_geometry"
     )
     monkeypatch.setattr(
-        "grandpy.data.API_MAP_LOC",
+        "grandpy.utilities.data.API_MAP_LOC",
         "test_location"
     )
     monkeypatch.setattr(
-        "grandpy.data.API_MAP_LNG",
+        "grandpy.utilities.data.API_MAP_LNG",
         "test_lng"
     )
     fake_json = {}

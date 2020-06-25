@@ -1,8 +1,8 @@
 from grandpy.utilities.grandpy import Grandpy
-from grandpy.utilities.grandpy import Parser
-from grandpy.API.grandpy import Requester
-from grandpy.API.grandpy import Place
-from grandpy.API.grandpy import Story
+from grandpy.utilities.parser import Parser
+from grandpy.API.requester import Requester
+from grandpy.API.place import Place
+from grandpy.API.story import Story
 
 
 class Mock_place():
