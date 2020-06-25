@@ -1,3 +1,6 @@
+import pytest
+import requests
+
 from grandpy.API.requester import Requester
 
 
