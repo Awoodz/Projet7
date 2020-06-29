@@ -1,6 +1,8 @@
 import requests
 
 import grandpy.utilities.data as dt
+from grandpy.api.gmap_request import Gmap
+from grandpy.api.wiki_request import Wiki
 
 
 class Requester():
@@ -9,21 +11,6 @@ class Requester():
     def __init__(self, parsed_txt, gmap_api_key):
         self.placedata = self.request_engine(parsed_txt, gmap_api_key)
 
-    def google_map_request(request_txt, gmap_api_key):
-        """Makes requests to Google Map API"""
-        # Creates variables to create an url string in request
-        input_key = (dt.INPUT_KEY + request_txt)
-        inputtype = (dt.INPUT_TYPE)
-        api_key = (dt.INPUT_API_KEY + gmap_api_key)
-
-        # Makes the request
-        gmap_req = requests.get(
-            dt.REQUEST_GMAP_URL +
-            input_key +
-            inputtype +
-            api_key
-        )
-        return gmap_req.json()
 
     def words_removal(request_txt):
         """Removes words from a string"""
@@ -55,9 +42,8 @@ class Requester():
         # As long as checker is not True
         while not checker:
 
-            req_response = Requester.google_map_request(
+            req_response = Gmap.google_map_request(
                 request_txt,
-                gmap_api_key
             )
 
             # If the request status is invalid

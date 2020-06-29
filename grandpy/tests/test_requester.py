@@ -1,4 +1,5 @@
 from grandpy.api.requester import Requester
+from grandpy.api.gmap_request import Gmap
 
 
 def test_does_words_removal_remove_first_words_of_string():
@@ -7,7 +8,7 @@ def test_does_words_removal_remove_first_words_of_string():
     assert test_response == "two "
 
 
-def mock_invalid_google_request(text, api_key):
+def mock_invalid_google_request(text):
     return {"test_status": "INVALID_REQUEST"}
 
 
@@ -15,7 +16,7 @@ def test_request_engine_return_mock_response_if_google_status_is_invalid(
     monkeypatch
 ):
     monkeypatch.setattr(
-        Requester,
+        Gmap,
         "google_map_request",
         mock_invalid_google_request
     )
@@ -32,7 +33,7 @@ def test_request_engine_return_mock_response_if_google_status_is_invalid(
     }
 
 
-def mock_valid_google_request(text, api_key):
+def mock_valid_google_request(text):
     return {"test_status": "OK", "test_state": "yay!"}
 
 
@@ -40,7 +41,7 @@ def test_request_engine_return_mock_response_if_google_status_is_valid(
     monkeypatch
 ):
     monkeypatch.setattr(
-        Requester,
+        Gmap,
         "google_map_request",
         mock_valid_google_request
     )
