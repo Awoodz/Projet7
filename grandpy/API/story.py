@@ -1,6 +1,6 @@
 import wikipedia
 
-from grandpy.API.place import Place
+from grandpy.api.place import Place
 import grandpy.utilities.data as dt
 
 

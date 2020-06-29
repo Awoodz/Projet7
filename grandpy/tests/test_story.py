@@ -1,5 +1,5 @@
-from grandpy.API.story import Story
-from grandpy.API.place import Place
+from grandpy.api.story import Story
+from grandpy.api.place import Place
 
 
 def mock_wiki(self, name, language):
