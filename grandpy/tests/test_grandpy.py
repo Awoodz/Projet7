@@ -29,7 +29,7 @@ class Mock_place():
 
 class Mock_story():
 
-    def __init__(self, gmap_json, language):
+    def __init__(self, gmap_json):
         self.story = "this is a fake story"
 
     @property
@@ -48,7 +48,7 @@ class Mock_parser():
 
 class Mock_requester():
 
-    def __init__(self, parsed_txt, gmap_api_key):
+    def __init__(self, parsed_txt):
         self.placedata = "placedata"
 
     @property
@@ -69,7 +69,7 @@ def test_does_grandpy_get_every_datas(monkeypatch):
     monkeypatch.setattr(Story, "__init__", Mock_story.__init__)
     monkeypatch.setattr(Story, "wiki_request", Mock_story.story)
 
-    usertest = Grandpy("mock1", "mock2", "mock3", "mock4", "mock5")
+    usertest = Grandpy("mock1", "mock2", "mock3")
 
     assert usertest.name == "fake_name"
     assert usertest.adress == "fake_adress"

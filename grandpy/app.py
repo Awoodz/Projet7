@@ -4,7 +4,6 @@ import string
 from grandpy.utilities.grandpy import Grandpy
 import grandpy.utilities.data as dt
 import grandpy.utilities.helpers as hp
-from config import GMAP_API_KEY
 
 
 def get_request(user_input):
@@ -21,8 +20,6 @@ def get_request(user_input):
     try:
         # Initialize Grandpy class
         grandpy = Grandpy(
-            dt.WIKI_LANGUAGE,
-            GMAP_API_KEY,
             user_input,
             stopwords,
             punctuation

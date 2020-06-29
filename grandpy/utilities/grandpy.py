@@ -9,8 +9,6 @@ class Grandpy():
 
     def __init__(
         self,
-        language,
-        gmap_api_key,
         form_input,
         stop_words,
         punctuation
@@ -22,12 +20,11 @@ class Grandpy():
         ).request
 
         self.apigmap = Requester(
-            self.parsed_request,
-            gmap_api_key
+            self.parsed_request
         ).placedata
-        
+
         self.place_data = Place(self.apigmap)
-        self.story_data = Story(self.apigmap, language)
+        self.story_data = Story(self.apigmap)
 
     @property
     def name(self):

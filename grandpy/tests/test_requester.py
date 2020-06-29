@@ -28,7 +28,7 @@ def test_request_engine_return_mock_response_if_google_status_is_invalid(
         "grandpy.utilities.data.API_MAP_CND",
         "test_candidates"
     )
-    assert Requester.request_engine("self", "fake_txt", "fake_api_key") == {
+    assert Requester.request_engine("self", "fake_txt") == {
         "test_candidates": 0
     }
 
@@ -49,7 +49,7 @@ def test_request_engine_return_mock_response_if_google_status_is_valid(
         "grandpy.utilities.data.API_MAP_STATUS",
         "test_status"
     )
-    assert Requester.request_engine("self", "fake_txt", "fake_api_key") == {
+    assert Requester.request_engine("self", "fake_txt") == {
         "test_status": "OK",
         "test_state": "yay!"
     }

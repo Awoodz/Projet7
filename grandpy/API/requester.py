@@ -1,5 +1,3 @@
-import requests
-
 import grandpy.utilities.data as dt
 from grandpy.api.gmap_request import Gmap
 from grandpy.api.wiki_request import Wiki
@@ -8,9 +6,8 @@ from grandpy.api.wiki_request import Wiki
 class Requester():
     """Makes requests to Google Map API"""
 
-    def __init__(self, parsed_txt, gmap_api_key):
-        self.placedata = self.request_engine(parsed_txt, gmap_api_key)
-
+    def __init__(self, parsed_txt):
+        self.placedata = self.request_engine(parsed_txt)
 
     def words_removal(request_txt):
         """Removes words from a string"""
@@ -31,7 +28,7 @@ class Requester():
             index_nb += 1
         return request_txt
 
-    def request_engine(self, parsed_txt, gmap_api_key):
+    def request_engine(self, parsed_txt):
         """Makes requests to Google Map API and modify"""
         """the request if there is no result"""
         # Setting a variable for loop
