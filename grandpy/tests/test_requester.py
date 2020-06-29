@@ -24,7 +24,7 @@ def test_request_engine_return_mock_response_if_google_status_is_invalid(
         "test_status"
     )
     monkeypatch.setattr(
-        "grandpy.utilities.data.API_MAP_CANDIDATES",
+        "grandpy.utilities.data.API_MAP_CND",
         "test_candidates"
     )
     assert Requester.request_engine("self", "fake_txt", "fake_api_key") == {

@@ -66,7 +66,7 @@ class Requester():
                 checker = True
                 # return an empty google map json
                 # return "candidates" tag avoid crash in Place class
-                return {dt.API_MAP_CANDIDATES: 0}
+                return {dt.API_MAP_CND: 0}
 
             # And if request status is not OK
             elif req_response[dt.API_MAP_STATUS] != "OK":

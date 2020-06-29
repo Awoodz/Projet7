@@ -8,7 +8,7 @@ SENT_NB = 1
 SPECIAL_STOP_WORDS = ["grandpy"]
 
 # Candidates tag of google map json
-API_MAP_CANDIDATES = "candidates"
+API_MAP_CND = "candidates"
 # Status tag of google map json
 API_MAP_STATUS = "status"
 # Name tag of google map json

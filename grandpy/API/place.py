@@ -9,16 +9,16 @@ class Place():
 
     @property
     def name(self):
-        return self.data[dt.API_MAP_CANDIDATES][0][dt.API_MAP_NAME]
+        return self.data[dt.API_MAP_CND][0][dt.API_MAP_NAME]
 
     @property
     def adress(self):
-        return self.data[dt.API_MAP_CANDIDATES][0][dt.API_MAP_ADRESS]
+        return self.data[dt.API_MAP_CND][0][dt.API_MAP_ADRESS]
 
     @property
     def lng(self):
-        return self.data[dt.API_MAP_CANDIDATES][0][dt.API_MAP_GEO][dt.API_MAP_LOC][dt.API_MAP_LNG]
+        return self.data[dt.API_MAP_CND][0][dt.API_MAP_GEO][dt.API_MAP_LOC][dt.API_MAP_LNG]
 
     @property
     def lat(self):
-        return self.data[dt.API_MAP_CANDIDATES][0][dt.API_MAP_GEO][dt.API_MAP_LOC][dt.API_MAP_LAT]
+        return self.data[dt.API_MAP_CND][0][dt.API_MAP_GEO][dt.API_MAP_LOC][dt.API_MAP_LAT]
