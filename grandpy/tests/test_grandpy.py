@@ -1,12 +1,11 @@
+from grandpy.api.place import Place
+from grandpy.api.requester import Requester
+from grandpy.utilities import helpers
 from grandpy.utilities.grandpy import Grandpy
 from grandpy.utilities.parser import Parser
-from grandpy.api.requester import Requester
-from grandpy.api.place import Place
-from grandpy.utilities import helpers
 
 
-class Mock_place():
-
+class Mock_place:
     def __init__(self, mock1, mock2):
         pass
 
@@ -25,20 +24,18 @@ class Mock_place():
     @property
     def lng(self):
         return "fake_lng"
-    
+
     @property
     def story(self):
         return "this is a fake story"
 
 
-class Mock_parser():
-
+class Mock_parser:
     def __init__(self, form_input):
         self.request = "request"
 
 
-class Mock_requester():
-
+class Mock_requester:
     def __init__(self, parsed_txt):
         self.placedata = {"gmap": "gmapdata", "wiki": "wikidata"}
 

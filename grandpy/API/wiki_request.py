@@ -3,7 +3,7 @@ import wikipedia
 import grandpy.utilities.data as dt
 
 
-class Wiki():
+class Wiki:
     """Docstrings"""
 
     def __init__(self, name):

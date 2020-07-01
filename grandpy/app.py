@@ -1,6 +1,6 @@
-from grandpy.utilities.grandpy import Grandpy
 import grandpy.utilities.data as dt
 import grandpy.utilities.helpers as hp
+from grandpy.utilities.grandpy import Grandpy
 
 
 def get_request(user_input):
@@ -16,7 +16,7 @@ def get_request(user_input):
             "adress": grandpy.adress,
             "lat": grandpy.lat,
             "lng": grandpy.lng,
-            "story": grandpy.story
+            "story": grandpy.story,
         }
 
     except (IndexError, TypeError) as error:
@@ -24,5 +24,5 @@ def get_request(user_input):
         # If failed, return lame excuses as json !
         return {
             "adress": hp.randomisator(dt.GRANDPY_PLACE_ERROR),
-            "story": hp.randomisator(dt.GRANDPY_STORY_ERROR)
+            "story": hp.randomisator(dt.GRANDPY_STORY_ERROR),
         }

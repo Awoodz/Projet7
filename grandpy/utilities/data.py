@@ -25,9 +25,7 @@ API_MAP_LAT = "lat"
 API_MAP_LNG = "lng"
 
 # First part of google map request url
-REQUEST_GMAP_URL = (
-    "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?"
-)
+REQUEST_GMAP_URL = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?"
 
 # Input part of google map request url
 INPUT_KEY = "input="
@@ -45,17 +43,17 @@ GRANDPY_PLACE_ERROR = [
 # List of sentences for story part if research fails
 GRANDPY_STORY_ERROR = [
     "...ou alors c'est mon créateur qui m'a mal programmé !",
-    "...ou bien c'est mon euh... 'Parser' ! qui n'est pas au point..."
+    "...ou bien c'est mon euh... 'Parser' ! qui n'est pas au point...",
 ]
 
 # List of sentences for place part
 GRANDPY_PLACE = [
     "Mais bien sûr que je connais ! c'est au ",
-    "Sans problème ! c'est à cette adresse : "
+    "Sans problème ! c'est à cette adresse : ",
 ]
 
 # List of sentences for story part
 GRANDPY_STORY = [
     "D'ailleurs je peux même ajouter ceci : ",
-    "Tu veux plus d'information ? Et bien sâches que "
+    "Tu veux plus d'information ? Et bien sâches que ",
 ]

@@ -1,11 +1,11 @@
-from grandpy.utilities.parser import Parser
-from grandpy.api.requester import Requester
-from grandpy.api.place import Place
 import grandpy.utilities.data as dt
 import grandpy.utilities.helpers as hp
+from grandpy.api.place import Place
+from grandpy.api.requester import Requester
+from grandpy.utilities.parser import Parser
 
 
-class Grandpy():
+class Grandpy:
     """Gather all datas that will be returned to frontpage"""
 
     def __init__(self, form_input):

@@ -3,7 +3,7 @@ from grandpy.api.gmap_request import Gmap
 from grandpy.api.wiki_request import Wiki
 
 
-class Requester():
+class Requester:
     """Makes requests to Google Map API"""
 
     def __init__(self, parsed_txt):
@@ -59,7 +59,4 @@ class Requester():
                 checker = True
                 # return the result as a json
                 wiki_response = Wiki(request_txt).story
-                return {
-                    "gmap": gmap_response,
-                    "wiki": wiki_response
-                }
+                return {"gmap": gmap_response, "wiki": wiki_response}

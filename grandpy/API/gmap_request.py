@@ -4,8 +4,9 @@ import grandpy.utilities.data as dt
 from config import GMAP_API_KEY
 
 
-class Gmap():
+class Gmap:
     """Docstrings"""
+
     def __init__(self, request_txt):
         self.req_result = self.google_map_request(request_txt)
 
@@ -16,7 +17,7 @@ class Gmap():
             dt.REQUEST_GMAP_URL,
             dt.INPUT_KEY + request_txt,
             dt.INPUT_TYPE,
-            dt.INPUT_API_KEY + GMAP_API_KEY
+            dt.INPUT_API_KEY + GMAP_API_KEY,
         ]
 
         request_url = "".join(url)

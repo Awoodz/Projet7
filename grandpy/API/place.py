@@ -1,7 +1,7 @@
 import grandpy.utilities.data as dt
 
 
-class Place():
+class Place:
     """Gather all place datas"""
 
     def __init__(self, gmap_json, wiki_response):
@@ -18,11 +18,15 @@ class Place():
 
     @property
     def lng(self):
-        return self.place_data[dt.API_MAP_CND][0][dt.API_MAP_GEO][dt.API_MAP_LOC][dt.API_MAP_LNG]
+        return self.place_data[dt.API_MAP_CND][0][dt.API_MAP_GEO][dt.API_MAP_LOC][
+            dt.API_MAP_LNG
+        ]
 
     @property
     def lat(self):
-        return self.place_data[dt.API_MAP_CND][0][dt.API_MAP_GEO][dt.API_MAP_LOC][dt.API_MAP_LAT]
+        return self.place_data[dt.API_MAP_CND][0][dt.API_MAP_GEO][dt.API_MAP_LOC][
+            dt.API_MAP_LAT
+        ]
 
     @property
     def story(self):
