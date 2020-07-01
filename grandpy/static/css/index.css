@@ -19,7 +19,7 @@ header, footer
     text-align: center;
     position: fixed;
     height: 10em;
-    vertical-align: middle;
+    display: table;
 }
 
 #main
@@ -65,6 +65,11 @@ footer
     {
         width: 100%;
     }
+
+    body
+    {
+        zoom: 100%;
+    }
 }
 
 @media(min-width: 1366px)
@@ -80,9 +85,27 @@ footer
         width: 50%;
         float: left;
     }
+
+    body
+    {
+        zoom: 75%;
+    }
 }
 
-#catchphrase, #dev_name
+#catchphrase, #dev_name, #github_div
+{
+
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#dev_name, #github_div
+{
+    float: left;
+    width: 100%;
+}
+
+#dev_name, #catchphrase
 {
     font-size: 3em;
     font-weight: bold;
@@ -98,6 +121,8 @@ footer
 {
     width: 8em;
     height: 8em;
+    display: table-cell;
+    vertical-align: middle;
     position: relative;
     top: 1em;
     left: 1em;
