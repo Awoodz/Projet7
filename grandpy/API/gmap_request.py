@@ -5,7 +5,7 @@ from config import GMAP_API_KEY
 
 
 class Gmap:
-    """Docstrings"""
+    """Contains all that concerns Google map request"""
 
     def __init__(self, request_txt):
         self.req_result = self.google_map_request(request_txt)
@@ -21,9 +21,6 @@ class Gmap:
         ]
 
         request_url = "".join(url)
-
-        print(request_url)
-
         # Makes the request
         gmap_req = requests.get(request_url)
 

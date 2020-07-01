@@ -4,7 +4,7 @@ import grandpy.utilities.data as dt
 
 
 class Wiki:
-    """Docstrings"""
+    """Contains all that concerns Google map request"""
 
     def __init__(self, name):
         self.story = self.wiki_request(name)
