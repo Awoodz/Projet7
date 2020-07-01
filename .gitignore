@@ -7,5 +7,5 @@ essai.py
 essai2.py
 __pycache__
 grandpy/tests/__pycache__
-grandpy/API/__pycache__
+grandpy/api/__pycache__
 grandpy/utilities/__pycache__
