@@ -17,19 +17,28 @@ def mock_wiki_request(mock1, mock2):
     return "story"
 
 
-def test_request_engine_return_mock_response_if_google_status_is_invalid(monkeypatch):
-    monkeypatch.setattr(Gmap, "google_map_request", mock_invalid_google_request)
+def test_request_return_response_if_google_status_is_invalid(monkeypatch):
+    monkeypatch.setattr(
+        Gmap,
+        "google_map_request",
+        mock_invalid_google_request
+    )
 
     monkeypatch.setattr("grandpy.utilities.data.API_MAP_STATUS", "test_status")
-    monkeypatch.setattr("grandpy.utilities.data.API_MAP_CND", "test_candidates")
-    assert Requester.request_engine("self", "fake_txt") == {"test_candidates": 0}
+    monkeypatch.setattr(
+        "grandpy.utilities.data.API_MAP_CND",
+        "test_candidates"
+    )
+    assert Requester.request_engine("self", "fake_txt") == {
+        "test_candidates": 0
+    }
 
 
 def mock_valid_google_request(text, mock):
     return {"test_status": "OK", "test_state": "yay!"}
 
 
-def test_request_engine_return_mock_response_if_google_status_is_valid(monkeypatch):
+def test_request_return_response_if_google_status_is_valid(monkeypatch):
     monkeypatch.setattr(Gmap, "google_map_request", mock_valid_google_request)
     monkeypatch.setattr(Wiki, "wiki_request", mock_wiki_request)
     monkeypatch.setattr("grandpy.utilities.data.API_MAP_STATUS", "test_status")
