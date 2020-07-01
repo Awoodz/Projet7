@@ -1,7 +1,6 @@
 from grandpy.utilities.parser import Parser
 from grandpy.api.requester import Requester
 from grandpy.api.place import Place
-from grandpy.api.story import Story
 import grandpy.utilities.data as dt
 import grandpy.utilities.helpers as hp
 
@@ -11,13 +10,8 @@ class Grandpy():
 
     def __init__(self, form_input):
         self.parsed_request = Parser(form_input).request
-
-        self.apigmap = Requester(
-            self.parsed_request
-        ).placedata
-
-        self.place_data = Place(self.apigmap)
-        self.story_data = Story(self.apigmap)
+        self.apigmap = Requester(self.parsed_request).placedata
+        self.place_data = Place(self.apigmap["gmap"], self.apigmap["wiki"])
 
     @property
     def name(self):
@@ -37,4 +31,4 @@ class Grandpy():
 
     @property
     def story(self):
-        return hp.randomisator(dt.GRANDPY_STORY) + self.story_data.story
+        return hp.randomisator(dt.GRANDPY_STORY) + self.place_data.story

@@ -6,7 +6,10 @@ import grandpy.utilities.data as dt
 class Wiki():
     """Docstrings"""
 
-    def wiki_request(name):
+    def __init__(self, name):
+        self.story = self.wiki_request(name)
+
+    def wiki_request(self, name):
         """Get a short story using wikipedia module"""
         # Set wikipedia language
         wikipedia.set_lang(dt.WIKI_LANGUAGE)

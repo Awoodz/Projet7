@@ -39,10 +39,10 @@ class Requester():
         # As long as checker is not True
         while not checker:
 
-            req_response = Gmap(request_txt).req_result
+            gmap_response = Gmap(request_txt).req_result
 
             # If the request status is invalid
-            if req_response[dt.API_MAP_STATUS] == "INVALID_REQUEST":
+            if gmap_response[dt.API_MAP_STATUS] == "INVALID_REQUEST":
                 # stop the loop
                 checker = True
                 # return an empty google map json
@@ -50,7 +50,7 @@ class Requester():
                 return {dt.API_MAP_CND: 0}
 
             # And if request status is not OK
-            elif req_response[dt.API_MAP_STATUS] != "OK":
+            elif gmap_response[dt.API_MAP_STATUS] != "OK":
                 request_txt = Requester.words_removal(request_txt)
 
             # Else, if everything is ok
@@ -58,5 +58,8 @@ class Requester():
                 # stop the loop
                 checker = True
                 # return the result as a json
-
-                return req_response
+                wiki_response = Wiki(request_txt).story
+                return {
+                    "gmap": gmap_response,
+                    "wiki": wiki_response
+                }

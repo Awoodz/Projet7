@@ -1,5 +1,6 @@
 from grandpy.api.requester import Requester
 from grandpy.api.gmap_request import Gmap
+from grandpy.api.wiki_request import Wiki
 
 
 def test_does_words_removal_remove_first_words_of_string():
@@ -8,8 +9,12 @@ def test_does_words_removal_remove_first_words_of_string():
     assert test_response == "two "
 
 
-def mock_invalid_google_request(text):
+def mock_invalid_google_request(text, mock):
     return {"test_status": "INVALID_REQUEST"}
+
+
+def mock_wiki_request(mock1, mock2):
+    return "story"
 
 
 def test_request_engine_return_mock_response_if_google_status_is_invalid(
@@ -20,6 +25,7 @@ def test_request_engine_return_mock_response_if_google_status_is_invalid(
         "google_map_request",
         mock_invalid_google_request
     )
+
     monkeypatch.setattr(
         "grandpy.utilities.data.API_MAP_STATUS",
         "test_status"
@@ -33,7 +39,7 @@ def test_request_engine_return_mock_response_if_google_status_is_invalid(
     }
 
 
-def mock_valid_google_request(text):
+def mock_valid_google_request(text, mock):
     return {"test_status": "OK", "test_state": "yay!"}
 
 
@@ -46,10 +52,16 @@ def test_request_engine_return_mock_response_if_google_status_is_valid(
         mock_valid_google_request
     )
     monkeypatch.setattr(
+        Wiki, "wiki_request", mock_wiki_request
+    )
+    monkeypatch.setattr(
         "grandpy.utilities.data.API_MAP_STATUS",
         "test_status"
     )
     assert Requester.request_engine("self", "fake_txt") == {
-        "test_status": "OK",
-        "test_state": "yay!"
+        "gmap": {
+            "test_status": "OK",
+            "test_state": "yay!"
+        },
+        "wiki": "story"
     }

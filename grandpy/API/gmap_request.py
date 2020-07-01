@@ -12,15 +12,18 @@ class Gmap():
     def google_map_request(self, request_txt):
         """Makes requests to Google Map API"""
         # Creates variables to create an url string in request
-        input_key = (dt.INPUT_KEY + request_txt)
-        inputtype = (dt.INPUT_TYPE)
-        api_key = (dt.INPUT_API_KEY + GMAP_API_KEY)
+        url = [
+            dt.REQUEST_GMAP_URL,
+            dt.INPUT_KEY + request_txt,
+            dt.INPUT_TYPE,
+            dt.INPUT_API_KEY + GMAP_API_KEY
+        ]
+
+        request_url = "".join(url)
+
+        print(request_url)
 
         # Makes the request
-        gmap_req = requests.get(
-            dt.REQUEST_GMAP_URL +
-            input_key +
-            inputtype +
-            api_key
-        )
+        gmap_req = requests.get(request_url)
+
         return gmap_req.json()
