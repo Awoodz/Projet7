@@ -6,8 +6,10 @@ from config import GMAP_API_KEY
 
 class Gmap():
     """Docstrings"""
+    def __init__(self, request_txt):
+        self.req_result = self.google_map_request(request_txt)
 
-    def google_map_request(request_txt):
+    def google_map_request(self, request_txt):
         """Makes requests to Google Map API"""
         # Creates variables to create an url string in request
         input_key = (dt.INPUT_KEY + request_txt)

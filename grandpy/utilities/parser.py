@@ -1,13 +1,28 @@
+from stop_words import get_stop_words
+import string
+
+import grandpy.utilities.data as dt
+import grandpy.utilities.helpers as hp
+
+
 class Parser():
     """Removes useless words and punctuation symbols"""
     """from a sentence"""
 
-    def __init__(self, form_input, stop_words, punctuation):
-        self.request = self.parse(form_input, stop_words, punctuation)
+    def __init__(self, form_input):
+        self.request = self.parse(form_input)
 
-    def parse(self, form_input, stop_words, punctuation):
+    def parse(self, form_input):
         """Removes useless words and punctuation symbols"""
         """from a sentence"""
+
+        # Set the main stop words list
+        stop_words = hp.stop_words(
+            get_stop_words(dt.BOT_LANGUAGE),
+            dt.SPECIAL_STOP_WORDS
+        )
+        # Set the punctuation list
+        punctuation = hp.punctuation(string.punctuation)
 
         # Changes uppercases to lowercases in the sentence
         request = form_input.lower()

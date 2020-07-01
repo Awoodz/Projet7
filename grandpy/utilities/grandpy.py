@@ -2,22 +2,15 @@ from grandpy.utilities.parser import Parser
 from grandpy.api.requester import Requester
 from grandpy.api.place import Place
 from grandpy.api.story import Story
+import grandpy.utilities.data as dt
+import grandpy.utilities.helpers as hp
 
 
 class Grandpy():
     """Gather all datas that will be returned to frontpage"""
 
-    def __init__(
-        self,
-        form_input,
-        stop_words,
-        punctuation
-    ):
-        self.parsed_request = Parser(
-            form_input,
-            stop_words,
-            punctuation
-        ).request
+    def __init__(self, form_input):
+        self.parsed_request = Parser(form_input).request
 
         self.apigmap = Requester(
             self.parsed_request
@@ -32,7 +25,7 @@ class Grandpy():
 
     @property
     def adress(self):
-        return self.place_data.adress
+        return hp.randomisator(dt.GRANDPY_PLACE) + self.place_data.adress
 
     @property
     def lng(self):
@@ -44,4 +37,4 @@ class Grandpy():
 
     @property
     def story(self):
-        return self.story_data.story
+        return hp.randomisator(dt.GRANDPY_STORY) + self.story_data.story

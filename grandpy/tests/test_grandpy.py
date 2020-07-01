@@ -3,6 +3,7 @@ from grandpy.utilities.parser import Parser
 from grandpy.api.requester import Requester
 from grandpy.api.place import Place
 from grandpy.api.story import Story
+from grandpy.utilities import helpers
 
 
 class Mock_place():
@@ -39,7 +40,7 @@ class Mock_story():
 
 class Mock_parser():
 
-    def __init__(self, form_input, stop_words, punctuation):
+    def __init__(self, form_input):
         self.request = "request"
 
     def request(self):
@@ -56,6 +57,10 @@ class Mock_requester():
         return "placedata"
 
 
+def mock_randomisator(mock1):
+    return "!"
+
+
 def test_does_grandpy_get_every_datas(monkeypatch):
     monkeypatch.setattr(Parser, "__init__", Mock_parser.__init__)
     monkeypatch.setattr(Parser, "parse", Mock_parser.request)
@@ -68,11 +73,12 @@ def test_does_grandpy_get_every_datas(monkeypatch):
     monkeypatch.setattr(Place, "lng", Mock_place.lng)
     monkeypatch.setattr(Story, "__init__", Mock_story.__init__)
     monkeypatch.setattr(Story, "wiki_request", Mock_story.story)
+    monkeypatch.setattr(helpers, "randomisator", mock_randomisator)
 
-    usertest = Grandpy("mock1", "mock2", "mock3")
+    usertest = Grandpy("mock1")
 
     assert usertest.name == "fake_name"
-    assert usertest.adress == "fake_adress"
+    assert usertest.adress == "!fake_adress"
     assert usertest.lat == "fake_lat"
     assert usertest.lng == "fake_lng"
-    assert usertest.story == "this is a fake story"
+    assert usertest.story == "!this is a fake story"

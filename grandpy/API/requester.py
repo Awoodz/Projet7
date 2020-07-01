@@ -39,9 +39,7 @@ class Requester():
         # As long as checker is not True
         while not checker:
 
-            req_response = Gmap.google_map_request(
-                request_txt,
-            )
+            req_response = Gmap(request_txt).req_result
 
             # If the request status is invalid
             if req_response[dt.API_MAP_STATUS] == "INVALID_REQUEST":
@@ -60,4 +58,5 @@ class Requester():
                 # stop the loop
                 checker = True
                 # return the result as a json
+
                 return req_response
