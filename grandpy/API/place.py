@@ -18,13 +18,17 @@ class Place:
 
     @property
     def lng(self):
-        return self.place_data[dt.API_MAP_CND][0][dt.API_MAP_GEO][dt.API_MAP_LOC][
+        return self.place_data[dt.API_MAP_CND][0][dt.API_MAP_GEO][
+            dt.API_MAP_LOC
+        ][
             dt.API_MAP_LNG
         ]
 
     @property
     def lat(self):
-        return self.place_data[dt.API_MAP_CND][0][dt.API_MAP_GEO][dt.API_MAP_LOC][
+        return self.place_data[dt.API_MAP_CND][0][dt.API_MAP_GEO][
+            dt.API_MAP_LOC
+        ][
             dt.API_MAP_LAT
         ]
 
