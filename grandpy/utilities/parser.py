@@ -8,7 +8,6 @@ import grandpy.utilities.helpers as hp
 
 class Parser:
     """Removes useless words and punctuation symbols"""
-
     """from a sentence"""
 
     def __init__(self, form_input):
