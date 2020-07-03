@@ -18,7 +18,7 @@ class Wiki:
             story = wikipedia.summary(name, sentences=dt.SENT_NB)
             # Return that sentence
             return story
-            
+
         except wikipedia.exceptions.PageError as error:
             print(error)
             return "fail"

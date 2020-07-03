@@ -68,14 +68,14 @@ class Requester:
                     if wiki_response == "fail":
                         # remove one word from the request
                         request_txt = Requester.words_removal(request_txt)
-                    
+
                     # If there is no word left in request
                     elif request_txt == " ":
                         # End the loop
                         checker2 = True
                         # Return answer
                         wiki_response = "..."
-                    # If a there is a result   
+                    # If a there is a result
                     else:
                         # End the loop
                         checker2 = True
