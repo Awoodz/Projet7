@@ -14,3 +14,4 @@ Retrouvez l'application ici : https://grandpy-awood.herokuapp.com/
   * Installez les modules contenus dans le requirements.txt
   * Créez une variable d'environnement qui contiendra votre clé API google map. Nommez la "GMAP_API_KEY".
   * Lancez le programme via la commande "py run.py" ("python3 run.py" sur macOS)
+  * Ouvrez votre navigateur web à l'adresse indiquée dans le terminal
