@@ -58,5 +58,14 @@ class Requester:
                 # stop the loop
                 checker = True
                 # return the result as a json
-                wiki_response = Wiki(request_txt).story
-                return {"gmap": gmap_response, "wiki": wiki_response}
+                checker2 = False
+                while not checker2:
+                    wiki_response = Wiki(request_txt).story
+                    if wiki_response == "fail":
+                        request_txt = Requester.words_removal(request_txt)
+                    elif request_txt == " ":
+                        checker2 = True
+                        wiki_response = "..."
+                    else:
+                        checker2 = True
+                        return {"gmap": gmap_response, "wiki": wiki_response}
