@@ -55,17 +55,29 @@ class Requester:
 
             # Else, if everything is ok
             else:
-                # stop the loop
+                # stop the first loop
                 checker = True
-                # return the result as a json
+                # start a second loop
                 checker2 = False
+                # As long as checker2 is not true
                 while not checker2:
+
                     wiki_response = Wiki(request_txt).story
+
+                    # If wikipedia request as no result :
                     if wiki_response == "fail":
+                        # remove one word from the request
                         request_txt = Requester.words_removal(request_txt)
+                    
+                    # If there is no word left in request
                     elif request_txt == " ":
+                        # End the loop
                         checker2 = True
+                        # Return answer
                         wiki_response = "..."
+                    # If a there is a result   
                     else:
+                        # End the loop
                         checker2 = True
+                        # return the result as a json
                         return {"gmap": gmap_response, "wiki": wiki_response}
