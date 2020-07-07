@@ -47,7 +47,7 @@ form.addEventListener("submit", function (event) {
         // Set google map
         map = new google.maps.Map(document.getElementById("map"), {
             center: {lat: latitude, lng: longitude},
-            zoom: 18
+            zoom: 20
         });
         // Set google map marker
         marker = new google.maps.Marker({

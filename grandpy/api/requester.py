@@ -30,7 +30,6 @@ class Requester:
 
     def request_engine(self, parsed_txt):
         """Makes requests to Google Map API and wikipedia."""
-        """Modify the request if there is no result"""
         # Setting a variable for loop
         gmap_result = Requester.make_gmap_request(parsed_txt)
         if gmap_result != "fail":
@@ -56,8 +55,13 @@ class Requester:
         while not checker:
 
             gmap_response = Gmap(request_txt).req_result
-
+            print("gmap" + request_txt)
             # If the request status is invalid
+            if request_txt == "":
+                # stop the loop
+                checker = True
+                # return fail string
+                return "fail"
             if request_txt == " ":
                 # stop the loop
                 checker = True
@@ -86,7 +90,7 @@ class Requester:
         while not checker:
 
             wiki_response = Wiki(request_txt).story
-
+            print("wiki" + request_txt)
             # If wikipedia request as no result :
             if wiki_response == "fail":
                 # remove one word from the request
