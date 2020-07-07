@@ -1,6 +1,6 @@
 import requests
 
-from grandpy.api.gmap_request import Gmap
+from grandpy.api.externals.gmap_request import Gmap
 
 
 class MockResponse():

@@ -1,6 +1,6 @@
-from grandpy.api.gmap_request import Gmap
+from grandpy.api.externals.gmap_request import Gmap
 from grandpy.api.requester import Requester
-from grandpy.api.wiki_request import Wiki
+from grandpy.api.externals.wiki_request import Wiki
 
 
 def test_does_words_removal_remove_first_words_of_string():

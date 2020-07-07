@@ -1,4 +1,4 @@
-from grandpy.api.wiki_request import Wiki
+from grandpy.api.externals.wiki_request import Wiki
 
 
 def mock_wiki(self, name):
