@@ -1,1 +1,3 @@
-GMAP_API_KEY = "AIzaSyBfxBWrm-RLtZhk4n0MuRNJfr-Rb0v5Rw4"
+import os
+
+GMAP_API_KEY = os.environ["GMAP_API_KEY"]
