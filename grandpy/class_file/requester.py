@@ -7,9 +7,9 @@ class Requester():
     """Makes requests to Google Map API"""
 
     def __init__(self, parsed_txt, gmap_api_key):
-        self.placedata = self.gmap_request(parsed_txt, gmap_api_key)
+        self.placedata = self._gmap_request(parsed_txt, gmap_api_key)
 
-    def gmap_request(self, parsed_txt, gmap_api_key):
+    def _gmap_request(self, parsed_txt, gmap_api_key):
         """Makes requests to Google Map API and modify"""
         """the request if there is no result"""
         # Setting a variable for loop

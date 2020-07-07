@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="static/css/index.css" />
@@ -20,7 +20,7 @@
                             <label for="form_input" id="form_label"></label>
                             <input type="text" name="form_input" id="form_input" placeholder="Posez votre question à GrandPy !"/>
                             <input id="submit_button" type="submit" value="Envoyer"/>
-                            
+                    </form> 
                 </div>
                 
 
@@ -43,8 +43,8 @@
         </div>
 
         <script type='text/javascript' src='static/js/config.js'></script>
-        <script async defer type="text/javascript" src="static/js/gmapinit.js"></script>
+        
         <script type="text/javascript" src="static/js/script.js"></script>
-
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_map_api_key }}"></script>
     </body>
 </html>

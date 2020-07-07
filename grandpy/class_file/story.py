@@ -9,9 +9,9 @@ class Story():
     def __init__(self, gmap_json, language):
         self.place = pl.Place(gmap_json)
         name = self.place.name
-        self.story = self.wiki_request(name, language)
+        self.story = self._wiki_request(name, language)
 
-    def wiki_request(self, name, language):
+    def _wiki_request(self, name, language):
         """Get a short story using wikipedia module"""
         # Set wikipedia language
         wikipedia.set_lang(language)

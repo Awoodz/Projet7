@@ -9,7 +9,8 @@ app_flask.config.from_object('config')
 
 @app_flask.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('index.html', google_map_api_key="AIzaSyBfxBWrm-RLtZhk4n0MuRNJfr-Rb0v5Rw4")
+
 
 
 @app_flask.route("/userinput", methods=["POST"])

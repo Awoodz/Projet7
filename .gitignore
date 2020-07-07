@@ -9,3 +9,4 @@ __pycache__
 grandpy/static/js/config.js
 grandpy/class/__pycache__
 config.py
+node_modules

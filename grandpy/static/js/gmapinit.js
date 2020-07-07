@@ -4,7 +4,7 @@ var gmapUrl = "https://maps.googleapis.com/maps/api/js?key=" + gmapKey + "&callb
 function loadScript() {
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = gmapUrl; //& needed
+    script.src = gmapUrl;
     document.body.appendChild(script);
   }
   

@@ -6,9 +6,9 @@ class Place():
 
     def __init__(self, gmap_json):
         self.json = gmap_json
-        self.data = self.get_place_data()
+        self.data = self._get_place_data()
 
-    def get_place_data(self):
+    def _get_place_data(self):
         """Get the datas out of "candidates" list of gmap json"""
         place_data = []
         # For each dictionnary in json

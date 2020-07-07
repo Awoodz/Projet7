@@ -3,9 +3,9 @@ class Parser():
     """from a sentence"""
 
     def __init__(self, form_input, stop_words, punctuation):
-        self.request = self.parse(form_input, stop_words, punctuation)
+        self.request = self._parse(form_input, stop_words, punctuation)
 
-    def parse(self, form_input, stop_words, punctuation):
+    def _parse(self, form_input, stop_words, punctuation):
         """Removes useless words and punctuation symbols"""
         """from a sentence"""
 
