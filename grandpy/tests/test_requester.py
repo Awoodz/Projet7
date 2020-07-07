@@ -9,29 +9,8 @@ def test_does_words_removal_remove_first_words_of_string():
     assert test_response == "two "
 
 
-def mock_invalid_google_request(text, mock):
-    return {"test_status": "INVALID_REQUEST"}
-
-
 def mock_wiki_request(mock1, mock2):
     return "story"
-
-
-def test_request_return_response_if_google_status_is_invalid(monkeypatch):
-    monkeypatch.setattr(
-        Gmap,
-        "google_map_request",
-        mock_invalid_google_request
-    )
-
-    monkeypatch.setattr("grandpy.utilities.data.API_MAP_STATUS", "test_status")
-    monkeypatch.setattr(
-        "grandpy.utilities.data.API_MAP_CND",
-        "test_candidates"
-    )
-    assert Requester.make_gmap_request("fake_txt") == {
-        "test_candidates": 0
-    }
 
 
 def mock_valid_google_request(text, mock):

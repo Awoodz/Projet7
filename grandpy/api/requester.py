@@ -32,10 +32,18 @@ class Requester:
         """Makes requests to Google Map API and wikipedia."""
         """Modify the request if there is no result"""
         # Setting a variable for loop
-        return {
-            "gmap": Requester.make_gmap_request(parsed_txt),
-            "wiki": Requester.make_wiki_request(parsed_txt)
-        }
+        gmap_result = Requester.make_gmap_request(parsed_txt)
+        if gmap_result != "fail":
+            wiki_result = Requester.make_wiki_request(parsed_txt)
+            return {
+                "gmap": gmap_result,
+                "wiki": wiki_result
+            }
+        else:
+            return {
+                "gmap": {dt.API_MAP_CND: 0},
+                "wiki": dt.GRANDPY_FORGET
+            }
 
     def make_gmap_request(parsed_txt):
         """Makes requests to Google Map API."""
@@ -50,12 +58,11 @@ class Requester:
             gmap_response = Gmap(request_txt).req_result
 
             # If the request status is invalid
-            if gmap_response[dt.API_MAP_STATUS] == "INVALID_REQUEST":
+            if request_txt == " ":
                 # stop the loop
                 checker = True
-                # return an empty google map json
-                # return "candidates" tag avoid crash in Place class
-                return {dt.API_MAP_CND: 0}
+                # return fail string
+                return "fail"
 
             # And if request status is not OK
             elif gmap_response[dt.API_MAP_STATUS] != "OK":
@@ -84,13 +91,18 @@ class Requester:
             if wiki_response == "fail":
                 # remove one word from the request
                 request_txt = Requester.words_removal(request_txt)
-                print(request_txt)
                 # If there is no word left in request
                 if request_txt == "":
                     # End the loop
                     checker = True
                     # Return answer
                     return dt.GRANDPY_FORGET
+                if request_txt == " ":
+                    # End the loop
+                    checker = True
+                    # Return answer
+                    return dt.GRANDPY_FORGET
+
             # If a there is a result
             else:
                 # End the loop

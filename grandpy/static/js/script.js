@@ -15,53 +15,53 @@ function postFormData(url, data) {
     document.querySelector("#grandpy").style.visibility = "hidden";
     // Hide google map
     document.querySelector("#map").style.visibility = "hidden";
-    // return userform
+    // Return userform
     return fetch(url, {
         method: "POST",
         body: data
     })
-    // convert response to json
+    // Convert response to json
     .then(response => response.json())
     .catch(error => console.log(error));
 }
 
-// if user submit an input
+// If user submit an input
 form.addEventListener("submit", function (event) {
 
-    // does not reload a page
+    // Does not reload a page
     event.preventDefault();
 
-    // use function with user input
+    // Use function with user input
     postFormData("/API/request", new FormData(form))
     .then(response => {
-        // display adress in adress div
+        // Display adress in adress div
         var answerDiv = document.getElementById("answer");
         answerDiv.innerHTML = response.adress;
-        // display story in story div
+        // Display story in story div
         var storyDiv = document.getElementById("story");
         storyDiv.innerHTML = response.story;
-        // get latitude to setup google map
+        // Get latitude to setup google map
         var latitude = response.lat
-        // get longitude to setup google map
+        // Get longitude to setup google map
         var longitude = response.lng
-        // set google map
+        // Set google map
         map = new google.maps.Map(document.getElementById("map"), {
             center: {lat: latitude, lng: longitude},
             zoom: 18
         });
-        // set google map marker
+        // Set google map marker
         marker = new google.maps.Marker({
             position: {lat: latitude, lng: longitude},
             map: map
         });
         
-        // hide loader
+        // Hide loader
         document.querySelector("#loader").style.visibility = "hidden";
-        // show text div (answer and story)
+        // Show text div (answer and story)
         document.querySelector("#grandpy").style.visibility = "visible";
-        // show google map
+        // Show google map
         document.querySelector("#map").style.visibility = "visible";
-        // reset userform
+        // Reset userform
         document.getElementById("grandpy_form").reset();
     })
 });

@@ -60,3 +60,9 @@ GRANDPY_STORY = [
 
 # Response string if wikipédia has no answer
 GRANDPY_FORGET = "...euh...j'ai oublié !"
+
+# Response if nothing in userform
+GRANDPY_VOID = [
+    "Tu dois écrire quelque chose !",
+    "Je ne lis pas dans les pensées..."
+]
