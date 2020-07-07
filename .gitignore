@@ -8,6 +8,7 @@ essai2.py
 __pycache__
 grandpy/tests/__pycache__
 grandpy/api/__pycache__
+grandpy/api/externals/__pycache__
 grandpy/utilities/__pycache__
 node_modules
 .eslintrc.json

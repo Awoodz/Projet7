@@ -1,6 +1,6 @@
 import grandpy.utilities.data as dt
-from grandpy.api.gmap_request import Gmap
-from grandpy.api.wiki_request import Wiki
+from grandpy.api.externals.gmap_request import Gmap
+from grandpy.api.externals.wiki_request import Wiki
 
 
 class Requester:
