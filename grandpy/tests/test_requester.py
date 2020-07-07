@@ -29,7 +29,7 @@ def test_request_return_response_if_google_status_is_invalid(monkeypatch):
         "grandpy.utilities.data.API_MAP_CND",
         "test_candidates"
     )
-    assert Requester.request_engine("self", "fake_txt") == {
+    assert Requester.make_gmap_request("fake_txt") == {
         "test_candidates": 0
     }
 

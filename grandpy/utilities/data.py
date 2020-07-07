@@ -55,5 +55,8 @@ GRANDPY_PLACE = [
 # List of sentences for story part
 GRANDPY_STORY = [
     "D'ailleurs je peux même ajouter ceci : ",
-    "Tu veux plus d'information ? Et bien sâches que ",
+    "Tu veux plus d'information ? Et bien sache que ",
 ]
+
+# Response string if wikipédia has no answer
+GRANDPY_FORGET = "...euh...j'ai oublié !"

@@ -19,6 +19,9 @@ class Wiki:
             # Return that sentence
             return story
 
-        except wikipedia.exceptions.PageError as error:
+        except (
+            wikipedia.exceptions.PageError,
+            wikipedia.exceptions.WikipediaException
+        ) as error:
             print(error)
             return "fail"

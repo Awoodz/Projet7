@@ -32,6 +32,14 @@ class Requester:
         """Makes requests to Google Map API and wikipedia."""
         """Modify the request if there is no result"""
         # Setting a variable for loop
+        return {
+            "gmap": Requester.make_gmap_request(parsed_txt),
+            "wiki": Requester.make_wiki_request(parsed_txt)
+        }
+
+    def make_gmap_request(parsed_txt):
+        """Makes requests to Google Map API."""
+        """Modify the request if there is no result"""
         checker = False
 
         request_txt = parsed_txt
@@ -57,27 +65,35 @@ class Requester:
             else:
                 # stop the first loop
                 checker = True
-                # start a second loop
-                checker2 = False
-                # As long as checker2 is not true
-                while not checker2:
+                return gmap_response
 
-                    wiki_response = Wiki(request_txt).story
+    def make_wiki_request(parsed_txt):
+        """Makes requests to wikipedia."""
+        """Modify the request if there is no result"""
+        # Setting a variable for loop
 
-                    # If wikipedia request as no result :
-                    if wiki_response == "fail":
-                        # remove one word from the request
-                        request_txt = Requester.words_removal(request_txt)
+        request_txt = parsed_txt
 
-                    # If there is no word left in request
-                    elif request_txt == " ":
-                        # End the loop
-                        checker2 = True
-                        # Return answer
-                        wiki_response = "..."
-                    # If a there is a result
-                    else:
-                        # End the loop
-                        checker2 = True
-                        # return the result as a json
-                        return {"gmap": gmap_response, "wiki": wiki_response}
+        checker = False
+        # As long as checker2 is not true
+        while not checker:
+
+            wiki_response = Wiki(request_txt).story
+
+            # If wikipedia request as no result :
+            if wiki_response == "fail":
+                # remove one word from the request
+                request_txt = Requester.words_removal(request_txt)
+                print(request_txt)
+                # If there is no word left in request
+                if request_txt == "":
+                    # End the loop
+                    checker = True
+                    # Return answer
+                    return dt.GRANDPY_FORGET
+            # If a there is a result
+            else:
+                # End the loop
+                checker = True
+                # return the result as a json
+                return wiki_response
