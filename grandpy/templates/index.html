@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html lang="fr">
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="static/css/index.css" />
@@ -9,7 +9,7 @@
         <div id="loader"></div>
         <div id="global">
             <header>
-                <img src="static/img/logo_python.png" alt="logo python png" id="logo_python" /> 
+                <div id= "div_logo"><img src="static/img/logo_python.png" alt="logo python png" id="logo_python" /></div>
                 <div id="catchphrase">Effectuez la recherche d'un lieu avec GrandPy !</div>
             </header>
 
@@ -19,11 +19,10 @@
                     <form id="grandpy_form" method="POST">
                             <label for="form_input" id="form_label"></label>
                             <input type="text" name="form_input" id="form_input" placeholder="Posez votre question à GrandPy !"/>
-                            <input id="submit_button" type="submit" value="Envoyer"/>
-                    </form> 
+                            <input id="submit_button" type="submit" value="Envoyer"/> 
+                    </form>       
                 </div>
                 
-
                 <div id="grandpy">
                     <div id="answer"></div>
                     <div id="story"></div>
@@ -37,14 +36,17 @@
             
             <footer>
                 <div id="dev_name">Amaury Bois</div>
-                <a href="https://github.com"><img src="static/img/logo_github.png" alt="logo github png" id="logo_github" /></a>
-                <a href="https://github.com/Awoodz/Projet7" id="url_github">https://github.com/Awoodz/Projet7</a>
+                <div id="github_div">
+                    <a href="https://github.com"><img src="static/img/logo_github.png" alt="logo github png" id="logo_github" /></a>
+                    <a href="https://github.com/Awoodz/Projet7" id="url_github">https://github.com/Awoodz/Projet7</a>
+                </div>
             </footer>
         </div>
 
-        <script type='text/javascript' src='static/js/config.js'></script>
-        
-        <script type="text/javascript" src="static/js/script.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_map_api_key }}"></script>
+        <script src="static/js/script.js"></script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key={{gmap_api_key}}&callback=initMap">
+        </script>
+
     </body>
 </html>

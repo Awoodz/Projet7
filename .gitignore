@@ -6,7 +6,7 @@ grandpy/__pycache__
 essai.py
 essai2.py
 __pycache__
-grandpy/static/js/config.js
-grandpy/class/__pycache__
-config.py
+grandpy/tests/__pycache__
+grandpy/api/__pycache__
+grandpy/utilities/__pycache__
 node_modules
